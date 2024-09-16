@@ -1,1 +1,67 @@
 Generic single-database configuration.
+    #    Concert Management System
+
+Program is a concert Management system that tracks bands, venues and concerts.
+
+THe program has SQLAlchemy:migrations, relationships, querying.
+
+We have 3 models.
+1.bands(hometown, name)
+2.venues(title, city)
+3.concerts(date)
+
+Band - venues is a many to many relationship
+
+## setup 
+1. **Create the database tables:**
+2.**Add sample data:**
+    run python main.py 
+
+## usage
+### Concert Methods
+
+- **`hometown_show()`**: Checks if the concert is in the band's hometown.
+
+    ```python
+    concert.hometown_show()
+    ```
+
+- **`introduction()`**: Returns a string introducing the band for the concert.
+
+    ```python
+    concert.introduction()
+    ```
+
+### Band Methods
+
+- **`play_in_venue(venue, date)`**: Creates a new concert for the band in a specified venue and date.
+
+    ```python
+    band.play_in_venue(venue, '2024-09-15')
+    ```
+
+- **`all_introductions()`**: Returns a list of introduction strings for all the band's concerts.
+
+    ```python
+    band.all_introductions()
+    ```
+
+- **`most_performances()`**: Returns the band with the most concerts.
+
+    ```python
+    Band.most_performances()
+    ```
+
+### Venue Methods
+
+- **`concert_on(date)`**: Finds and returns the first concert on a specified date at the venue.
+
+    ```python
+    venue.concert_on('2024-09-15')
+    ```
+
+- **`most_frequent_band()`**: Returns the band with the most concerts at the venue.
+
+    ```python
+    venue.most_frequent_band()
+    ```
